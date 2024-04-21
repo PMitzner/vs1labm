@@ -46,7 +46,9 @@ a {
 
 /* ### TODO ### Styles for other HTML elements */
 
-/* ... your code here ... */
+  /* COOOOOOOOODDDEEEEEE*/
+  
+   
 
 
 /* Grid styles (no changes required) */
@@ -109,29 +111,167 @@ a {
 
 /* ### TODO ### Styles for Header Component */
 
-/* ... your code here ... */
 
+
+.header{
+  background-color:var(--background-color);
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 50px;
+}
+.discovery__map{
+  float:right;
+  padding-left: 15px;
+}
+
+.header__image{
+  width: 50px;
+  height: 45px;
+}
 
 /* ### TODO ### Styles for Main Component */
 
-/* ... your code here ... */
+.main{
+  max-width: 850px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
 
 /* ### TODO ### Styles for Tagging component */
 
-/* ... your code here ... */
 
+.tagging__fieldset{
+  padding: 20px;
+  height: 500px;
+  background-color: #fbfbfb;
+  border-color: #a7a7a7;
+}
+#latitude{
+  display: block;
+}
+#longitude{
+  display: block;
+}
+#name{
+  display: block;
+}
+#hashtag{
+  display: block;
+}
+input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+h2 {
+  margin-bottom: 15px;
+}
+#addtag {
+  margin-top: 20px;
+  width: 185px;
+  background-color: rgb(244, 244, 244);
+  text-align: center;
+  border: 2px solid #e2e2e2;
+}
 
 /* ### TODO ### Styles for Discovery component */
 
-/* ... your code here ... */
 
+.discovery__fieldset{
+  padding: 10px;
+  width: 700px;
+  background-color: #fbfbfb;
+  border-color: #a7a7a7;
+}
+legend{
+  display: block;
+}
+#termkey{
+  display: block;
+}
+#addtag{
+  display: block;
+}
+.discovery__wrapper{
+  width: 600px;
+}
+.discovery__map {
+  margin-top: 20px;
+}
+
+#mapView{
+  margin-left: 15px;
+  height: 330px;
+  width: 455px;
+}
+#discoveryResults li{
+  margin-top: 10px;
+  padding: 15px;
+  color: var(--link-color);
+  list-style-type: none;
+  float: left;
+  border-color: #666;
+  background-color: #efefef;
+}
+
+#latitude_discovery{
+  display: block;
+  display: none;
+}
+#longitude_discovery{
+  display: block;
+  display: none;
+}
 
 /* ### TODO ### Styles for Footer Component */
 
-/* ... your code here ... */
+.footer{
+  background-color: #efefef;
+  height:100px;
+}
+.footer span{
+  padding-left: 50px;
+  padding-top: 50px;
+}
 
+span{
+  display: block;
+}
 
 /* ### TODO ### Media Queries */
-
+@media screen and (max-width:650px){
+  .row {
+    flex-direction: column;
+  }
+  .main{
+    margin-left: 50px;
+  }
+  .field_discovery{
+    width: 230px;
+  }
+  .discovery__fieldset{
+    width: 350px;
+  }
+  .main__discovery{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .header__title{
+    margin: 20px;
+  }
+  #discoveryResults{
+    margin-bottom: 50px;
+    width: 230px;
+  }
+  
+  #mapView{
+    width: 400px;
+    height: 300px;
+  }
+}
 /* ... your code here ... */
