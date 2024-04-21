@@ -15,7 +15,7 @@
 
 <body>
     <header class="header row">
-        <img src="./images/icon.png" class="header__image" alt="an image of a map and location">
+        <img src="./images/location.png" class="header__image" alt="an image of a map and location">
         <h1 class="header__title">GeoTagApp</h1>
         <nav class="header__navigation">
             <a href="#">About</a> | 
@@ -48,7 +48,7 @@
                             <label for="hashtag">Hashtag:</label>
                             <input type="text" id="hashtag" name="hashtag" placeholder="e.g. #schloss" maxlength="11" pattern="#[A-Za-z]+">
 
-                            <input type="submit" value="Add Tag" >
+                            <input type="submit" id="longbutton" value="Add Tag" >
 
                     </fieldset>
 
@@ -66,15 +66,14 @@
                         <legend>Search</legend>
 
                         <div>
-                            <label for="searchterm">Search term or keywords:</label>
+                            <label for="searchterm" id="termkey">Search term or keywords:</label>
                             <input type="text" id="searchterm" name="searchterm" placeholder="e.g. Karlsruhe" required>    
-
                             <input type="hidden" id="latitude_discovery" name="latitude_discovery">
                             <input type="hidden" id="longitude_discovery" name="longitude_discovery">
                         </div>
         
                         <div>
-                            <input type="submit" value="Search">
+                            <input type="submit" value="Search" id="longbutton">
                         </div>
 
                     </fieldset>
