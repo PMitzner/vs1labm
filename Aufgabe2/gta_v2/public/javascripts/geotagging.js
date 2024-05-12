@@ -58,7 +58,7 @@ class LocationHelper {
         // These callbacks are given as arrow function expressions.
         geoLocationApi.getCurrentPosition((location) => {
             // Create and initialize LocationHelper object.
-            let helper = new LocationHelper(location.coords.latitude, location.coords.longitude);
+            var helper = new LocationHelper(location.coords.latitude, location.coords.longitude);
             // Pass the locationHelper object to the callback.
             callback(helper);
         }, (error) => {
@@ -84,10 +84,10 @@ class MapManager {
     initMap(latitude, longitude, zoom = 18) {
         // set up dynamic Leaflet map
         this.#map = L.map('map').setView([latitude, longitude], zoom);
-        var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        var mapLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
-            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; ' + mapLink + ' Contributors'
+            'https://tile.openstreetmap.org/{zoom}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink
         }).addTo(this.#map);
         this.#markers = L.layerGroup().addTo(this.#map);
     }
@@ -117,6 +117,7 @@ class MapManager {
  * A function to retrieve the current location and update the page.
  * It is called once the page has been fully loaded.
  */
+
 function updateLocation() {
     LocationHelper.findLocation(function(helper)  {
         const latitude = helper.latitude;
@@ -129,16 +130,22 @@ function updateLocation() {
 
         document.getElementById('latitude_tagging').value = latitude;
         document.getElementById('longitude_tagging').value = longitude;
-
+        
         document.getElementById('latitude_discovery').value = latitude;
         document.getElementById('latitude_discovery').value = longitude;
-
+        
         const mapManager = new MapManager();
+        
         mapManager.initMap(latitude, longitude);
+        
         mapManager.updateMarkers(latitude, longitude, "Location");
     });
 }
-
+document.addEventListener("DOMContentLoaded", () => {
+    updateLocation();
+});
 // Wait for the page to fully load its DOM content, then call updateLocation
-document.addEventListener("DOMContentLoaded", updateLocation);
+
+
+   
 
