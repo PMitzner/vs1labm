@@ -278,3 +278,6 @@ span{
   }
 }
 /* ... your code here ... */
+#map { 
+  height: 500px;
+}
