@@ -119,10 +119,10 @@ class MapManager {
  */
 
 function updateLocation() {
-    LocationHelper.findLocation(function(helper)  {
+    LocationHelper.findLocation(function (helper) {
         const latitude = helper.latitude;
         const longitude = helper.longitude;
-
+        
         const mapViewImage = document.getElementById('mapView');
         const mapViewLabel = mapViewImage.nextElementSibling;
         mapViewImage.remove();
@@ -130,15 +130,14 @@ function updateLocation() {
 
         document.getElementById('latitude_tagging').value = latitude;
         document.getElementById('longitude_tagging').value = longitude;
-        
+
         document.getElementById('latitude_discovery').value = latitude;
-        document.getElementById('latitude_discovery').value = longitude;
-        
+        document.getElementById('longitude_discovery').value = longitude;
+
         const mapManager = new MapManager();
-        
         mapManager.initMap(latitude, longitude);
-        
-        mapManager.updateMarkers(latitude, longitude, "Location");
+
+        mapManager.updateMarkers(latitude, longitude, []);
     });
 }
 document.addEventListener("DOMContentLoaded", () => {
@@ -147,5 +146,5 @@ document.addEventListener("DOMContentLoaded", () => {
 // Wait for the page to fully load its DOM content, then call updateLocation
 
 
-   
+
 
