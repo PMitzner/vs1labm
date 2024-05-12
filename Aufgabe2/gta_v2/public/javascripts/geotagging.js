@@ -86,7 +86,7 @@ class MapManager {
         this.#map = L.map('map').setView([latitude, longitude], zoom);
         var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
-            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; ' + mapLink + ' Contributors'
         }).addTo(this.#map);
         this.#markers = L.layerGroup().addTo(this.#map);
@@ -122,6 +122,11 @@ function updateLocation() {
         const latitude = helper.latitude;
         const longitude = helper.longitude;
 
+        const mapViewImage = document.getElementById('mapView');
+        const mapViewLabel = mapViewImage.nextElementSibling;
+        mapViewImage.remove();
+        mapViewLabel.remove();
+
         document.getElementById('latitude_tagging').value = latitude;
         document.getElementById('longitude_tagging').value = longitude;
 
@@ -131,11 +136,6 @@ function updateLocation() {
         const mapManager = new MapManager();
         mapManager.initMap(latitude, longitude);
         mapManager.updateMarkers(latitude, longitude, "Location");
-
-        const mapViewImage = document.getElementById('mapView');
-        const mapViewLabel = mapViewImage.nextElementSibling;
-        mapViewImage.remove();
-        mapViewLabel.remove();
     });
 }
 
