@@ -271,13 +271,9 @@ span{
     margin-bottom: 50px;
     width: 230px;
   }
-  
-  #mapView{
-    width: 400px;
-    height: 300px;
-  }
 }
 /* ... your code here ... */
 #map { 
-  height: 500px;
+  height: 400px;
+  margin-left: 10px;
 }
